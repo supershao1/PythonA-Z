@@ -1,0 +1,111 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNmMXBZyY2g4Jx3QmXrE7uh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/supershao1/PythonA-Z/blob/main/Quant01_Handshakes.ipyn\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Quant Exercise 01: Handshakes Question"
+      ],
+      "metadata": {
+        "id": "xi_STm-QgqQi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A couple invited 4 other couples to join a party (5 couples in total), everyone shook hands with people they didn't know. Then, the host asked everyone how many times they've shook hands and they gave all different answers. \n",
+        "\n",
+        "Assuming no one shook hands with their own partner, how many times did the hostess shake hands in the party?"
+      ],
+      "metadata": {
+        "id": "8OYiag3VQx_m"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from numpy.random import randn"
+      ],
+      "metadata": {
+        "id": "-lgbxNl0gvjd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a list of numbers of handshakes that each person could have made\n",
+        "#handshakes = [i for i in range(9)]\n",
+        "handshakes = list(range(9))\n",
+        "print(handshakes)\n",
+        "#guest()={}\n",
+        "\n",
+        "\n",
+        "# Loop over all possible numbers of handshakes for the hostess\n",
+        "for hostess_handshakes in handshakes:\n",
+        "    # Calculate the number of handshakes the host made\n",
+        "    #host_handshakes = 8 - hostess_handshakes\n",
+        "\n",
+        "    # Create a list of numbers of handshakes that the other guests could have made\n",
+        "    other_handshakes = handshakes - hostess_handshakes\n",
+        "\n",
+        "    for i in range(5):\n",
+        "      couple(i) \n",
+        "\n",
+        "\n",
+        "    # Check whether any two guests have the same number of handshakes\n",
+        "    if len(other_handshakes) == len(set(other_handshakes)):\n",
+        "        # If not, the hostess shook hands with exactly one person\n",
+        "        print(\"The hostess shook hands with one person.\")\n",
+        "        break\n",
+        "print(hostess_handshakes)"
+      ],
+      "metadata": {
+        "id": "zFzO2W0pOLlk",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b3d7f129-1a16-4999-e541-4985d51f101e"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3, 4, 5, 6, 7, 8]\n",
+            "The hostess shook hands with one person.\n",
+            "0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
